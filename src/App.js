@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { Link, Route, Routes } from 'react-router-dom';
+import './App.css'
+import Mac from './components/macbook/Mac';
+import Acer from './components/acer/Acer';
+import Airpods from './components/airpods/Airpods';
+import Asus from './components/asus/Asus';
+import Phons from './components/phons/Phons';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+     <div style={{ display: 'flex', justifyContent: 'space-around', height: '50px' }}>
+      <Link to="/mac">Mac</Link>
+      <Link to="/acer">Acer</Link>
+      <Link to="/airpods">Airpods</Link>
+      <Link to="/asus">Asus</Link>
+      <Link to="/phons">Phons</Link>
+     </div>
+     <Routes>
+      <Route path='/mac' element={<Mac />} />
+      <Route path='/acer' element={<Acer />} />
+      <Route path='/airpods' element={<Airpods />} />
+      <Route path='/asus' element={<Asus />} />
+      <Route path='/phons' element={<Phons />} />
+     </Routes>
     </div>
-  );
+  )
 }
 
 export default App;
+
